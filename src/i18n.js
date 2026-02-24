@@ -499,7 +499,7 @@ i18n.use(initReactI18next).init({
             id: "flooring",
             title: "rénovation de plancher",
             image:
-              "https://img.freepik.com/premium-photo/before-after-photos-grouting-ceramic-tiles-home-renovation-repair-work-concept-home-renovation-grouting-ceramic-tiles-before-after-repair-work_918839-43247.jpg?w=2000",
+              "https://images.squarespace-cdn.com/content/v1/6373db11a264167b4fdd326a/48c7dbf5-b7a6-41a1-8c4a-7f5fb02b9993/IMG_5651.jpg",
             content: [
               "Un nouveau plancher change l'apparence et la valeur d'une maison. Projets à Montréal : Sous-plancher, Vinyle, Bois franc, Bois d'ingénierie, Sablage.",
               "Note : TOUS LES PRIX INCLUENT LES MATÉRIAUX ET LA MAIN-D'ŒUVRE. La démolition n'est PAS incluse.",
@@ -534,7 +534,7 @@ i18n.use(initReactI18next).init({
             id: "ceramic",
             title: "rénovations en céramique",
             image:
-              "https://images.unsplash.com/photo-1516156008625-3a9d6067fab5?auto=format&fit=crop&q=80&w=2070",
+              "https://img.freepik.com/premium-photo/before-after-photos-grouting-ceramic-tiles-home-renovation-repair-work-concept-home-renovation-grouting-ceramic-tiles-before-after-repair-work_918839-43247.jpg?w=2000",
             content: [
               "La tuile de céramique est un matériau polyvalent qui améliore l'esthétique et la fonction des maisons montréalaises. Qu'il s'agisse de murs, de planchers ou de projets spécialisés comme des douches et des dosserets, la céramique offre durabilité et style.",
               "Pour les vieilles maisons et les sous-sols de Montréal, une attention particulière est portée à la préparation de la surface pour éviter les fissures. Nous utilisons souvent des membranes et des moulures Schluter pour assurer l'étanchéité et une finition professionnelle.",
