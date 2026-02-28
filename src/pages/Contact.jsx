@@ -179,7 +179,7 @@ const Contact = () => {
                 <div>
                   <h4 className="font-semibold">Email</h4>
                   <p className="text-gray-500">
-                    info@agnconstructions.ca
+                    info@gnconstructions.ca
                   </p>
                 </div>
               </div>

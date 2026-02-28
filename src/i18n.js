@@ -9,7 +9,7 @@ i18n.use(initReactI18next).init({
         missionHeroLine1: "Built With Purpose.",
         missionHeroHighlight: "Driven By Excellence.",
         missionHeroDesc:
-          "At AGN Constructions, our mission is to deliver precision craftsmanship, unwavering integrity, and lasting value in every structure we create.",
+          "At GN Constructions, our mission is to deliver precision craftsmanship, unwavering integrity, and lasting value in every structure we create.",
 
         missionCommitmentTitle: "Our Commitment",
         missionCommitmentText:
@@ -46,7 +46,7 @@ i18n.use(initReactI18next).init({
         heroTitleHighlight: "Legacy",
         heroTitleLine2: "With Precision",
         heroDesc:
-          "AGN Constructions provides elite renovation and construction services. From basements to kitchens, we deliver excellence.",
+          "GN Constructions provides elite renovation and construction services. From basements to kitchens, we deliver excellence.",
         getQuote: "Get a Quote",
         ourServices: "Our Services",
         whoWeAre: "Who We Are",
@@ -349,7 +349,7 @@ i18n.use(initReactI18next).init({
             name: "John Peterson",
             role: "Homeowner",
             content:
-              "AGN Constructions transformed our basement into the playroom of our dreams. Professional, on-time, and fair pricing.",
+              "GN Constructions transformed our basement into the playroom of our dreams. Professional, on-time, and fair pricing.",
             rating: 5,
           },
           {
@@ -375,7 +375,7 @@ i18n.use(initReactI18next).init({
         missionHeroLine1: "Construire avec intention.",
         missionHeroHighlight: "Exécuter avec excellence.",
         missionHeroDesc:
-          "Chez AGN Constructions, notre mission est d’offrir un savoir-faire précis, une intégrité constante et une valeur durable dans chaque projet que nous réalisons.",
+          "Chez GN Constructions, notre mission est d’offrir un savoir-faire précis, une intégrité constante et une valeur durable dans chaque projet que nous réalisons.",
 
         missionCommitmentTitle: "Notre Engagement",
         missionCommitmentText:
@@ -412,7 +412,7 @@ i18n.use(initReactI18next).init({
         heroTitleHighlight: "Héritage",
         heroTitleLine2: "Avec Précision",
         heroDesc:
-          "AGN Constructions offre des services de rénovation et de construction de qualité supérieure. Des sous-sols aux cuisines, nous livrons l'excellence.",
+          "GN Constructions offre des services de rénovation et de construction de qualité supérieure. Des sous-sols aux cuisines, nous livrons l'excellence.",
         getQuote: "Obtenir un Devis",
         ourServices: "Nos Services",
         whoWeAre: "Qui Sommes-Nous",
@@ -707,7 +707,7 @@ i18n.use(initReactI18next).init({
             name: "John Peterson",
             role: "Propriétaire",
             content:
-              "AGN Constructions a transformé notre sous-sol en la salle de jeux de nos rêves. Professionnel, à l’heure et prix juste.",
+              "GN Constructions a transformé notre sous-sol en la salle de jeux de nos rêves. Professionnel, à l’heure et prix juste.",
             rating: 5,
           },
           {
