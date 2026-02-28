@@ -11,15 +11,15 @@ const Footer = () => {
           <div className="flex items-center space-x-2">
             <Hammer className="text-secondary w-6 h-6" />
             <span className="text-xl font-heading font-extrabold tracking-tighter">
-              AGN <span className="text-secondary">CONSTRUCTIONS</span>
+              GN <span className="text-secondary">CONSTRUCTIONS</span>
             </span>
           </div>
           <p className="text-gray-400 max-w-xs">
             Professional construction and renovation services tailored to your needs. Quality craftsmanship you can trust.
           </p>
-          <div className="text-sm font-semibold text-secondary">
+          {/* <div className="text-sm font-semibold text-secondary">
             RBQ Number: 1234-5678-90
-          </div>
+          </div> */}
         </div>
 
         {/* Quick Links */}
@@ -43,7 +43,7 @@ const Footer = () => {
             </div>
             <div className="flex items-start space-x-3 text-gray-400">
               <Mail size={20} className="text-secondary shrink-0" />
-              <span>info@agnconstructions.ca</span>
+              <span>info@gnconstructions.ca</span>
             </div>
             <div className="flex items-start space-x-3 text-gray-400">
               <MapPin size={20} className="text-secondary shrink-0" />
@@ -54,7 +54,7 @@ const Footer = () => {
       </div>
       
       <div className="max-w-7xl mx-auto px-6 md:px-12 mt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-        <p>© {new Date().getFullYear()} AGN Constructions. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} GN Constructions. All rights reserved.</p>
         <p className="mt-2 md:mt-0">Built for excellence.</p>
       </div>
     </footer>

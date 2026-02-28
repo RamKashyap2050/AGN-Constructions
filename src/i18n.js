@@ -5,6 +5,43 @@ i18n.use(initReactI18next).init({
   resources: {
     en: {
       translation: {
+        missionPageTitle: "Our Mission",
+        missionHeroLine1: "Built With Purpose.",
+        missionHeroHighlight: "Driven By Excellence.",
+        missionHeroDesc:
+          "At AGN Constructions, our mission is to deliver precision craftsmanship, unwavering integrity, and lasting value in every structure we create.",
+
+        missionCommitmentTitle: "Our Commitment",
+        missionCommitmentText:
+          "Construction is more than materials and machinery. It is discipline, accountability, and execution. Every project represents a promise — to build safely, deliver on schedule, and exceed expectations through craftsmanship that stands the test of time.",
+
+        missionValuesTitle: "Our Core Values",
+
+        missionValue1Title: "Integrity",
+        missionValue1Desc:
+          "Transparent communication and honest execution from start to finish.",
+
+        missionValue2Title: "Precision",
+        missionValue2Desc:
+          "Strategic planning and attention to every structural detail.",
+
+        missionValue3Title: "Craftsmanship",
+        missionValue3Desc:
+          "Elite workmanship backed by professional standards and experience.",
+
+        missionStatement:
+          "We build structures that stand strong — and relationships that last longer.",
+
+        missionStat1Top: "100%",
+        missionStat1Bottom: "Licensed & Insured",
+
+        missionStat2Top: "RBQ",
+        missionStat2Bottom: "Certified Professionals",
+
+        missionStat3Top: "QC",
+        missionStat3Bottom: "Serving Montreal & Surroundings",
+
+        missionCtaTitle: "Ready to Build Something Exceptional?",
         heroTitleLine1: "Building Your",
         heroTitleHighlight: "Legacy",
         heroTitleLine2: "With Precision",
@@ -334,6 +371,43 @@ i18n.use(initReactI18next).init({
     },
     fr: {
       translation: {
+        missionPageTitle: "Notre Mission",
+        missionHeroLine1: "Construire avec intention.",
+        missionHeroHighlight: "Exécuter avec excellence.",
+        missionHeroDesc:
+          "Chez AGN Constructions, notre mission est d’offrir un savoir-faire précis, une intégrité constante et une valeur durable dans chaque projet que nous réalisons.",
+
+        missionCommitmentTitle: "Notre Engagement",
+        missionCommitmentText:
+          "La construction va bien au-delà des matériaux et de la machinerie. Elle repose sur la discipline, la responsabilité et l’exécution. Chaque projet représente une promesse : construire en toute sécurité, respecter les délais et dépasser les attentes grâce à un travail qui traverse le temps.",
+
+        missionValuesTitle: "Nos Valeurs Fondamentales",
+
+        missionValue1Title: "Intégrité",
+        missionValue1Desc:
+          "Une communication transparente et une exécution honnête du début à la fin.",
+
+        missionValue2Title: "Précision",
+        missionValue2Desc:
+          "Une planification stratégique et une attention rigoureuse à chaque détail.",
+
+        missionValue3Title: "Savoir-faire",
+        missionValue3Desc:
+          "Un travail d’élite soutenu par des standards professionnels élevés.",
+
+        missionStatement:
+          "Nous construisons des structures solides — et des relations encore plus durables.",
+
+        missionStat1Top: "100%",
+        missionStat1Bottom: "Licencié & Assuré",
+
+        missionStat2Top: "RBQ",
+        missionStat2Bottom: "Professionnels certifiés",
+
+        missionStat3Top: "QC",
+        missionStat3Bottom: "Montréal & environs",
+
+        missionCtaTitle: "Prêt à construire quelque chose d’exceptionnel ?",
         heroTitleLine1: "Construire Votre",
         heroTitleHighlight: "Héritage",
         heroTitleLine2: "Avec Précision",

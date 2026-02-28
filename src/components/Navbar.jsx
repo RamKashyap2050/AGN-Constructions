@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Hammer } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import path from "path";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,6 +21,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: t("navHome"), path: "/" },
+    { name: "Misson", path: "/misson" },
     { name: t("navServices"), path: "/services" },
     { name: t("navContact"), path: "/contact" },
   ];
@@ -36,14 +38,13 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2 group">
           <div className="bg-primary p-2 rounded-lg group-hover:bg-secondary transition-colors duration-300">
             <Hammer className="text-white w-6 h-6" />
           </div>
           <span className="text-xl font-heading font-extrabold tracking-tighter text-primary">
-            AGN <span className="text-secondary">CONSTRUCTIONS</span>
+            GN <span className="text-secondary">CONSTRUCTIONS</span>
           </span>
         </Link>
 

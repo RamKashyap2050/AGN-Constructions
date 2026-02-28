@@ -29,7 +29,7 @@ const Home = () => {
       <section className="relative h-screen flex items-center">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2070&auto=format&fit=crop"
+            src="https://images.dailyhive.com/20210324092213/13475719-12-alt.jpeg"
             alt="Modern construction"
             className="w-full h-full object-cover"
           />
@@ -84,7 +84,7 @@ const Home = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            src="https://static.vecteezy.com/system/resources/previews/022/453/397/non_2x/silhouette-of-engineer-looking-at-construction-site-engineering-concept-double-exposure-generative-ai-free-photo.jpg"
+            src="https://thumbs.dreamstime.com/b/luxury-house-montreal-canada-luxury-house-montreal-canada-against-blue-sky-123981483.jpg"
             alt="Construction team"
             className="rounded-2xl shadow-2xl"
           />
