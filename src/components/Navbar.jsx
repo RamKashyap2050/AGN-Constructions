@@ -7,31 +7,55 @@ import { useTranslation } from "react-i18next";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
+  const [openCategory, setOpenCategory] = useState(null); // for mobile
   const location = useLocation();
   const { t, i18n } = useTranslation();
 
   const servicesData = t("services", { returnObjects: true });
   const isServicesArray = Array.isArray(servicesData);
 
+  const categories = [
+    {
+      key: "interior",
+      name: t("navInterior"),
+      ids: ["bathroom", "kitchen", "basement", "drywall", "flooring", "ceramic", "stairs"],
+    },
+    {
+      key: "exterior",
+      name: t("navExterior"),
+      ids: ["roofing"],
+    },
+    {
+      key: "commercial",
+      name: t("navCommercial"),
+      ids: ["commercial", "restaurant"],
+    },
+  ].map((cat) => ({
+    ...cat,
+    services: isServicesArray
+      ? servicesData.filter((s) => cat.ids.includes(s.id))
+      : [],
+  }));
+
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: t("navHome"), path: "/" },
-    { name: "Misson", path: "/misson" },
-    { name: t("navServices"), path: "/services", isDropdown: true },
-    { name: t("navContact"), path: "/contact" },
-  ];
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsOpen(false);
+    setOpenCategory(null);
+  }, [location.pathname, location.hash]);
 
   const changeLanguage = (lang) => {
     i18n.changeLanguage(lang);
     localStorage.setItem("lang", lang);
+  };
+
+  const toggleCategory = (key) => {
+    setOpenCategory((prev) => (prev === key ? null : key));
   };
 
   return (
@@ -52,52 +76,65 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => (
-            link.isDropdown ? (
-              <div key={link.path} className="relative group">
-                <Link
-                  to={link.path}
-                  className={`flex items-center gap-1 font-semibold hover:text-secondary transition-colors duration-200 ${
-                    location.pathname.startsWith(link.path)
-                      ? "text-secondary"
-                      : "text-primary"
-                  }`}
-                >
-                  {link.name}
-                  <ChevronDown className="w-4 h-4 ml-1 transition-transform duration-200 group-hover:rotate-180" />
-                </Link>
-                {isServicesArray && (
-                  <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-xl rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                    {servicesData.map((service) => (
-                      <Link
-                        key={service.id}
-                        to={`/services#${service.id}`}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-secondary"
-                      >
-                        {service.title}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ) : (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`font-semibold hover:text-secondary transition-colors duration-200 ${
-                  location.pathname === link.path
-                    ? "text-secondary"
-                    : "text-primary"
-                }`}
+        <div className="hidden md:flex items-center space-x-6">
+
+          {/* Home */}
+          <Link
+            to="/"
+            className={`font-semibold hover:text-secondary transition-colors duration-200 ${
+              location.pathname === "/" ? "text-secondary" : "text-primary"
+            }`}
+          >
+            {t("navHome")}
+          </Link>
+
+          {/* Mission */}
+          <Link
+            to="/misson"
+            className={`font-semibold hover:text-secondary transition-colors duration-200 ${
+              location.pathname === "/misson" ? "text-secondary" : "text-primary"
+            }`}
+          >
+            Mission
+          </Link>
+
+          {/* Category Dropdowns */}
+          {categories.map((cat) => (
+            <div key={cat.key} className="relative group">
+              <button
+                className={`flex items-center gap-1 font-semibold hover:text-secondary transition-colors duration-200 text-primary`}
               >
-                {link.name}
-              </Link>
-            )
+                {cat.name}
+                <ChevronDown className="w-4 h-4 ml-0.5 transition-transform duration-200 group-hover:rotate-180" />
+              </button>
+              {cat.services.length > 0 && (
+                <div className="absolute top-full left-0 mt-2 w-60 bg-white shadow-xl rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
+                  {cat.services.map((service) => (
+                    <Link
+                      key={service.id}
+                      to={`/services#${service.id}`}
+                      className="block px-5 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-secondary transition-colors"
+                    >
+                      {service.title}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
 
+          {/* Contact */}
+          <Link
+            to="/contact"
+            className={`font-semibold hover:text-secondary transition-colors duration-200 ${
+              location.pathname === "/contact" ? "text-secondary" : "text-primary"
+            }`}
+          >
+            {t("navContact")}
+          </Link>
+
           {/* Language Toggle */}
-          <div className="hidden md:flex items-center gap-3 border-l pl-4">
+          <div className="flex items-center gap-3 border-l pl-4">
             <button
               onClick={() => changeLanguage("en")}
               className="text-sm font-bold text-primary hover:text-secondary"
@@ -112,7 +149,7 @@ const Navbar = () => {
             </button>
           </div>
 
-          <Link to="/contact" className="btn btn-primary px-5 py-2 text-sm hidden md:block">
+          <Link to="/contact" className="btn btn-primary px-5 py-2 text-sm">
             {t("getQuote")}
           </Link>
         </div>
@@ -133,90 +170,108 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 w-full bg-white shadow-xl py-6 md:hidden border-t"
+            className="absolute top-full left-0 w-full bg-white shadow-xl py-4 md:hidden border-t overflow-y-auto max-h-[85vh]"
           >
-            <div className="flex flex-col items-center space-y-6">
-              {navLinks.map((link) => (
-                link.isDropdown ? (
-                  <div key={link.path} className="w-full text-center flex flex-col items-center">
-                    <button
-                      onClick={() => setServicesOpen(!servicesOpen)}
-                      className={`text-lg font-bold flex items-center gap-2 ${
-                        location.pathname.startsWith(link.path)
-                          ? "text-secondary"
-                          : "text-primary"
-                      }`}
-                    >
-                      {link.name}
-                      {servicesOpen ? <Minus size={18} /> : <Plus size={18} />}
-                    </button>
-                    <AnimatePresence>
-                      {servicesOpen && isServicesArray && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          className="flex flex-col space-y-4 mt-4 overflow-hidden"
-                        >
-                          {servicesData.map((service) => (
-                            <Link
-                              key={service.id}
-                              to={`/services#${service.id}`}
-                              className="text-md text-gray-600 hover:text-secondary"
-                              onClick={() => {
-                                setIsOpen(false);
-                                setServicesOpen(false);
-                              }}
-                            >
-                              {service.title}
-                            </Link>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                ) : (
-                  <Link
-                    key={link.path}
-                    to={link.path}
-                    className={`text-lg font-bold ${
-                      location.pathname === link.path
-                        ? "text-secondary"
-                        : "text-primary"
-                    }`}
-                    onClick={() => {
-                      setIsOpen(false);
-                      setServicesOpen(false);
-                    }}
-                  >
-                    {link.name}
-                  </Link>
-                )
-              ))}
-
-              {/* Mobile Language Toggle */}
-              <div className="flex gap-6 pt-4 border-t w-3/4 justify-center">
-                <button
-                  onClick={() => changeLanguage("en")}
-                  className="font-bold text-primary"
-                >
-                  EN
-                </button>
-                <button
-                  onClick={() => changeLanguage("fr")}
-                  className="font-bold text-primary"
-                >
-                  FR
-                </button>
-              </div>
-
+            <div className="flex flex-col">
+              {/* Home */}
               <Link
-                to="/contact"
-                className="btn btn-primary w-3/4 text-center"
+                to="/"
+                className={`text-base font-bold px-8 py-3 ${
+                  location.pathname === "/" ? "text-secondary" : "text-primary"
+                }`}
                 onClick={() => setIsOpen(false)}
               >
-                {t("getQuote")}
+                {t("navHome")}
               </Link>
+
+              {/* Mission */}
+              <Link
+                to="/misson"
+                className={`text-base font-bold px-8 py-3 ${
+                  location.pathname === "/misson" ? "text-secondary" : "text-primary"
+                }`}
+                onClick={() => setIsOpen(false)}
+              >
+                Mission
+              </Link>
+
+              {/* Category Dropdowns */}
+              {categories.map((cat) => (
+                <div key={cat.key} className="border-t border-gray-100">
+                  <button
+                    onClick={() => toggleCategory(cat.key)}
+                    className="w-full flex items-center justify-between px-8 py-3 text-base font-bold text-primary hover:text-secondary transition-colors"
+                  >
+                    {cat.name}
+                    {openCategory === cat.key ? (
+                      <Minus size={18} className="flex-shrink-0" />
+                    ) : (
+                      <Plus size={18} className="flex-shrink-0" />
+                    )}
+                  </button>
+                  <AnimatePresence>
+                    {openCategory === cat.key && cat.services.length > 0 && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="overflow-hidden bg-gray-50"
+                      >
+                        {cat.services.map((service) => (
+                          <Link
+                            key={service.id}
+                            to={`/services#${service.id}`}
+                            className="block px-12 py-2.5 text-sm text-gray-600 hover:text-secondary font-medium transition-colors"
+                            onClick={() => {
+                              setIsOpen(false);
+                              setOpenCategory(null);
+                            }}
+                          >
+                            {service.title}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ))}
+
+              {/* Contact */}
+              <Link
+                to="/contact"
+                className={`text-base font-bold px-8 py-3 border-t border-gray-100 ${
+                  location.pathname === "/contact" ? "text-secondary" : "text-primary"
+                }`}
+                onClick={() => setIsOpen(false)}
+              >
+                {t("navContact")}
+              </Link>
+
+              {/* Language + CTA */}
+              <div className="border-t border-gray-100 mt-2 px-8 pt-4 pb-6 flex flex-col gap-4">
+                <div className="flex gap-6">
+                  <button
+                    onClick={() => changeLanguage("en")}
+                    className="font-bold text-primary hover:text-secondary"
+                  >
+                    EN
+                  </button>
+                  <button
+                    onClick={() => changeLanguage("fr")}
+                    className="font-bold text-primary hover:text-secondary"
+                  >
+                    FR
+                  </button>
+                </div>
+                <Link
+                  to="/contact"
+                  className="btn btn-primary text-center"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {t("getQuote")}
+                </Link>
+              </div>
             </div>
           </motion.div>
         )}

@@ -320,6 +320,35 @@ i18n.use(initReactI18next).init({
             ],
           },
           {
+            id: "roofing",
+            title: "Roofing Services",
+            image:
+              "https://inspectsolution.pro/wp-content/uploads/2024/09/DALL%C2%B7E-2024-09-24-15.49.53-A-close-up-rendering-of-various-roofing-materials-laid-side-by-side-on-a-roof.-The-image-shows-segments-of-different-roofing-materials_-asphalt-shingl.webp",
+            content: [
+              "Your roof is your home's first line of defense against the harsh Montreal climate. Whether you need a full replacement or targeted repairs, GN Constructions delivers reliable, high-quality roofing solutions.",
+              "We work with a variety of roofing materials suited to Quebec's climate, ensuring long-lasting protection and curb appeal.",
+            ],
+            averagePrice: "Roofing costs vary significantly based on roof size, pitch, and material. Contact us for a free on-site estimate.",
+            features: [
+              "Full roof replacement or repairs",
+              "Asphalt shingles & flat roof systems",
+              "Flashing & leak repairs",
+              "Ventilation improvements",
+              "Gutter installation & replacement",
+            ],
+            pricing: [
+              { item: "Asphalt shingles (standard)", price: "$4.50 - $6.00 / ft²" },
+              { item: "Flat roof membrane", price: "$7.00 - $10.00 / ft²" },
+              { item: "Flashing repair", price: "From $350" },
+              { item: "Gutter installation", price: "$12 - $20 / Linear Foot" },
+            ],
+            considerations: [
+              "Regular inspections can prevent costly structural damage.",
+              "Proper attic ventilation extends the life of your roof.",
+              "Quebec winters demand high-quality waterproofing materials.",
+            ],
+          },
+          {
             id: "commercial",
             title: "Commercial Renovations",
             image:
@@ -373,6 +402,9 @@ i18n.use(initReactI18next).init({
         ],
         navHome: "Home",
         navServices: "Services",
+        navInterior: "Interior",
+        navExterior: "Exterior",
+        navCommercial: "Commercial",
         navContact: "Contact",
         getQuote: "Get a Quote",
         servicesPageTitle: "Our Services",
@@ -728,6 +760,35 @@ i18n.use(initReactI18next).init({
             ],
           },
           {
+            id: "roofing",
+            title: "Services de Toiture",
+            image:
+              "https://inspectsolution.pro/wp-content/uploads/2024/09/DALL%C2%B7E-2024-09-24-15.49.53-A-close-up-rendering-of-various-roofing-materials-laid-side-by-side-on-a-roof.-The-image-shows-segments-of-different-roofing-materials_-asphalt-shingl.webp",
+            content: [
+              "Votre toit est la première ligne de défense de votre maison contre le climat rigoureux de Montréal. Que vous ayez besoin d'un remplacement complet ou de réparations ciblées, GN Constructions offre des solutions de toiture fiables et de haute qualité.",
+              "Nous travaillons avec une variété de matériaux adaptés au climat québécois pour assurer une protection durable et une belle apparence.",
+            ],
+            averagePrice: "Les coûts de toiture varient selon la superficie, la pente et les matériaux. Contactez-nous pour une estimation gratuite sur place.",
+            features: [
+              "Remplacement ou réparation complète du toit",
+              "Bardeaux d'asphalte & systèmes de toit plat",
+              "Réparations de solins et fuites",
+              "Améliorations de la ventilation",
+              "Installation et remplacement de gouttières",
+            ],
+            pricing: [
+              { item: "Bardeaux d'asphalte (standard)", price: "4,50 $ - 6,00 $ / pi²" },
+              { item: "Membrane de toit plat", price: "7,00 $ - 10,00 $ / pi²" },
+              { item: "Réparation de solins", price: "À partir de 350 $" },
+              { item: "Installation de gouttières", price: "12 $ - 20 $ / pied linéaire" },
+            ],
+            considerations: [
+              "Des inspections régulières peuvent prévenir des dommages structurels coûteux.",
+              "Une bonne ventilation en grenier prolonge la durée de vie du toit.",
+              "Les hivers québécois exigent des matériaux d'étanchéité de haute qualité.",
+            ],
+          },
+          {
             id: "commercial",
             title: "Rénovations Commerciales",
             image:
@@ -781,6 +842,9 @@ i18n.use(initReactI18next).init({
         ],
         navHome: "Accueil",
         navServices: "Services",
+        navInterior: "Intérieur",
+        navExterior: "Extérieur",
+        navCommercial: "Commercial",
         navContact: "Contactes nouz",
         getQuote: "Obtenir un devis",
         servicesPageTitle: "Nos Services",
