@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Hammer } from "lucide-react";
+import { Menu, X, Hammer, ChevronDown, Plus, Minus } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import path from "path";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const location = useLocation();
   const { t, i18n } = useTranslation();
+
+  const servicesData = t("services", { returnObjects: true });
+  const isServicesArray = Array.isArray(servicesData);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,7 +25,7 @@ const Navbar = () => {
   const navLinks = [
     { name: t("navHome"), path: "/" },
     { name: "Misson", path: "/misson" },
-    { name: t("navServices"), path: "/services" },
+    { name: t("navServices"), path: "/services", isDropdown: true },
     { name: t("navContact"), path: "/contact" },
   ];
 
@@ -51,21 +54,50 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={`font-semibold hover:text-secondary transition-colors duration-200 ${
-                location.pathname === link.path
-                  ? "text-secondary"
-                  : "text-primary"
-              }`}
-            >
-              {link.name}
-            </Link>
+            link.isDropdown ? (
+              <div key={link.path} className="relative group">
+                <Link
+                  to={link.path}
+                  className={`flex items-center gap-1 font-semibold hover:text-secondary transition-colors duration-200 ${
+                    location.pathname.startsWith(link.path)
+                      ? "text-secondary"
+                      : "text-primary"
+                  }`}
+                >
+                  {link.name}
+                  <ChevronDown className="w-4 h-4 ml-1 transition-transform duration-200 group-hover:rotate-180" />
+                </Link>
+                {isServicesArray && (
+                  <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-xl rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                    {servicesData.map((service) => (
+                      <Link
+                        key={service.id}
+                        to={`/services#${service.id}`}
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-secondary"
+                      >
+                        {service.title}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`font-semibold hover:text-secondary transition-colors duration-200 ${
+                  location.pathname === link.path
+                    ? "text-secondary"
+                    : "text-primary"
+                }`}
+              >
+                {link.name}
+              </Link>
+            )
           ))}
 
           {/* Language Toggle */}
-          <div className="flex items-center gap-3 border-l pl-4">
+          <div className="hidden md:flex items-center gap-3 border-l pl-4">
             <button
               onClick={() => changeLanguage("en")}
               className="text-sm font-bold text-primary hover:text-secondary"
@@ -80,7 +112,7 @@ const Navbar = () => {
             </button>
           </div>
 
-          <Link to="/contact" className="btn btn-primary px-5 py-2 text-sm">
+          <Link to="/contact" className="btn btn-primary px-5 py-2 text-sm hidden md:block">
             {t("getQuote")}
           </Link>
         </div>
@@ -105,18 +137,61 @@ const Navbar = () => {
           >
             <div className="flex flex-col items-center space-y-6">
               {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`text-lg font-bold ${
-                    location.pathname === link.path
-                      ? "text-secondary"
-                      : "text-primary"
-                  }`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.name}
-                </Link>
+                link.isDropdown ? (
+                  <div key={link.path} className="w-full text-center flex flex-col items-center">
+                    <button
+                      onClick={() => setServicesOpen(!servicesOpen)}
+                      className={`text-lg font-bold flex items-center gap-2 ${
+                        location.pathname.startsWith(link.path)
+                          ? "text-secondary"
+                          : "text-primary"
+                      }`}
+                    >
+                      {link.name}
+                      {servicesOpen ? <Minus size={18} /> : <Plus size={18} />}
+                    </button>
+                    <AnimatePresence>
+                      {servicesOpen && isServicesArray && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          className="flex flex-col space-y-4 mt-4 overflow-hidden"
+                        >
+                          {servicesData.map((service) => (
+                            <Link
+                              key={service.id}
+                              to={`/services#${service.id}`}
+                              className="text-md text-gray-600 hover:text-secondary"
+                              onClick={() => {
+                                setIsOpen(false);
+                                setServicesOpen(false);
+                              }}
+                            >
+                              {service.title}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ) : (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className={`text-lg font-bold ${
+                      location.pathname === link.path
+                        ? "text-secondary"
+                        : "text-primary"
+                    }`}
+                    onClick={() => {
+                      setIsOpen(false);
+                      setServicesOpen(false);
+                    }}
+                  >
+                    {link.name}
+                  </Link>
+                )
               ))}
 
               {/* Mobile Language Toggle */}
