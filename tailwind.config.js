@@ -7,9 +7,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#1A2B3C", // Deep Navy
-        secondary: "#B8860B", // Slate Gold
-        accent: "#F5F5F5", // Concrete Gray
+        primary: "#1F2228", // Premium Dark Gray
+        secondary: "#9A6A3F", // Bronze
+        accent: "#2A2E35", // Deep Slate
+        offwhite: "#F8F8F8",
       },
       fontFamily: {
         heading: ["Montserrat", "sans-serif"],

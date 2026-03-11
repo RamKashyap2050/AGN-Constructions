@@ -48,7 +48,7 @@ const Contact = () => {
   ];
 
   return (
-    <div className="pt-24 min-h-screen">
+    <div className="pt-24 min-h-screen bg-[#1F2228] text-[#E0E0E0]">
 
       {/* HERO */}
       <section className="bg-primary text-white py-24 px-6 text-center">
@@ -68,9 +68,9 @@ const Contact = () => {
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="bg-white p-10 md:p-14 rounded-2xl shadow-xl border border-gray-100"
+          className="bg-[#2A2E35] p-10 md:p-14 rounded-2xl shadow-xl border border-white/5"
         >
-          <h2 className="text-3xl font-bold mb-2">
+          <h2 className="text-3xl font-bold mb-2 text-white">
             {t("formQuoteTitle")}
           </h2>
           <div className="w-12 h-1 bg-secondary mb-8"></div>
@@ -82,43 +82,43 @@ const Contact = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="text-sm font-bold text-primary uppercase tracking-wider">
+                <label className="text-sm font-bold text-white uppercase tracking-wider">
                   {t("labelName")}
                 </label>
                 <input
                   type="text"
                   name="name"
                   required
-                  className="w-full bg-accent rounded-lg p-4 mt-2 focus:ring-2 focus:ring-secondary focus:bg-white transition"
+                  className="w-full bg-[#1F2228] text-white border border-white/10 rounded-lg p-4 mt-2 focus:ring-2 focus:ring-secondary focus:bg-[#25282E] transition"
                 />
               </div>
 
               <div>
-                <label className="text-sm font-bold text-primary uppercase tracking-wider">
+                <label className="text-sm font-bold text-white uppercase tracking-wider">
                   {t("labelEmail")}
                 </label>
                 <input
                   type="email"
                   name="email"
                   required
-                  className="w-full bg-accent rounded-lg p-4 mt-2 focus:ring-2 focus:ring-secondary focus:bg-white transition"
+                  className="w-full bg-[#1F2228] text-white border border-white/10 rounded-lg p-4 mt-2 focus:ring-2 focus:ring-secondary focus:bg-[#25282E] transition"
                 />
               </div>
             </div>
 
             <div>
-              <label className="text-sm font-bold text-primary uppercase tracking-wider">
+              <label className="text-sm font-bold text-white uppercase tracking-wider">
                 {t("labelPhone")}
               </label>
               <input
                 type="tel"
                 name="phone"
-                className="w-full bg-accent rounded-lg p-4 mt-2 focus:ring-2 focus:ring-secondary focus:bg-white transition"
+                className="w-full bg-[#1F2228] text-white border border-white/10 rounded-lg p-4 mt-2 focus:ring-2 focus:ring-secondary focus:bg-[#25282E] transition"
               />
             </div>
 
             <div>
-              <label className="text-sm font-bold text-primary uppercase tracking-wider">
+              <label className="text-sm font-bold text-white uppercase tracking-wider">
                 {t("labelDetails")}
               </label>
               <textarea
@@ -126,7 +126,7 @@ const Contact = () => {
                 rows="5"
                 required
                 placeholder={t("placeholderDetails")}
-                className="w-full bg-accent rounded-lg p-4 mt-2 focus:ring-2 focus:ring-secondary focus:bg-white transition"
+                className="w-full bg-[#1F2228] text-white border border-white/10 rounded-lg p-4 mt-2 focus:ring-2 focus:ring-secondary focus:bg-[#25282E] transition"
               />
             </div>
 
@@ -157,7 +157,7 @@ const Contact = () => {
         <div className="space-y-16">
 
           <div>
-            <h2 className="text-3xl font-bold mb-8">
+            <h2 className="text-3xl font-bold mb-8 text-white">
               {t("reachOutTitle")}
             </h2>
 
@@ -167,8 +167,8 @@ const Contact = () => {
                   <Phone size={22} />
                 </div>
                 <div>
-                  <h4 className="font-semibold">Phone</h4>
-                  <p className="text-gray-500">(555) 123-4567</p>
+                  <h4 className="font-semibold text-white">Phone</h4>
+                  <p className="text-[#A0A0A0]">(514) 927-4131</p>
                 </div>
               </div>
 
@@ -177,8 +177,8 @@ const Contact = () => {
                   <Mail size={22} />
                 </div>
                 <div>
-                  <h4 className="font-semibold">Email</h4>
-                  <p className="text-gray-500">
+                  <h4 className="font-semibold text-white">Email</h4>
+                  <p className="text-[#A0A0A0]">
                     info@gnconstructions.ca
                   </p>
                 </div>
@@ -189,8 +189,8 @@ const Contact = () => {
                   <MapPin size={22} />
                 </div>
                 <div>
-                  <h4 className="font-semibold">Location</h4>
-                  <p className="text-gray-500">Montreal, QC</p>
+                  <h4 className="font-semibold text-white">Location</h4>
+                  <p className="text-[#A0A0A0]">5405 Rue des Jockeys, Montreal, QC</p>
                 </div>
               </div>
             </div>
@@ -198,13 +198,13 @@ const Contact = () => {
 
           {/* TESTIMONIALS */}
           <div>
-            <h2 className="text-3xl font-bold mb-8">
+            <h2 className="text-3xl font-bold mb-8 text-white">
               {t("testimonialsTitle")}
             </h2>
 
             <div className="space-y-6">
               {testimonials.map((test, idx) => (
-                <div key={idx} className="bg-accent p-6 rounded-xl">
+                <div key={idx} className="bg-[#2A2E35] p-6 rounded-xl border border-white/5">
                   <div className="flex mb-3">
                     {[...Array(test.rating)].map((_, i) => (
                       <Star
@@ -214,10 +214,10 @@ const Contact = () => {
                       />
                     ))}
                   </div>
-                  <p className="italic text-primary mb-4">
+                  <p className="italic text-[#E0E0E0] mb-4">
                     "{test.content}"
                   </p>
-                  <div className="font-bold text-sm">
+                  <div className="font-bold text-sm text-secondary">
                     — {test.name}, {test.role}
                   </div>
                 </div>
@@ -228,8 +228,8 @@ const Contact = () => {
       </div>
 
       {/* GALLERY */}
-      <section className="section-padding bg-accent">
-        <h2 className="text-4xl text-center mb-16">
+      <section className="section-padding bg-[#1F2228]">
+        <h2 className="text-4xl text-center mb-16 text-white">
           {t("galleryTitle")}
         </h2>
 

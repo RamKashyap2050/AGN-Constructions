@@ -20,7 +20,7 @@ const Services = () => {
 
 
   return (
-    <div className="pt-24 min-h-screen">
+    <div className="pt-24 min-h-screen bg-[#1F2228] text-[#E0E0E0]">
       {/* Language Switch */}
       <div className="absolute top-6 left-6 md:right-6 md:left-auto z-50 flex gap-4">
         {/* <button
@@ -67,7 +67,7 @@ const Services = () => {
                 ))}
 
                 {activeService.averagePrice && (
-                  <p className="font-semibold text-primary">
+                  <p className="font-semibold text-secondary">
                     {activeService.averagePrice}
                   </p>
                 )}
@@ -76,19 +76,19 @@ const Services = () => {
                   {activeService.features.map((feature) => (
                     <div
                       key={feature}
-                      className="flex items-center space-x-3 bg-white p-4 rounded-xl border shadow-sm"
+                      className="flex items-center space-x-3 bg-[#2A2E35] p-4 rounded-xl border border-white/5 shadow-sm"
                     >
                       <Check size={18} className="text-secondary" />
-                      <span className="font-semibold text-sm">{feature}</span>
+                      <span className="font-semibold text-sm text-[#E0E0E0]">{feature}</span>
                     </div>
                   ))}
                 </div>
 
                 {activeService.considerations && (
                   <div className="space-y-2 pt-6">
-                    <h4 className="font-bold">Things to Consider</h4>
+                    <h4 className="font-bold text-white">Things to Consider</h4>
                     {activeService.considerations.map((item) => (
-                      <p key={item} className="text-sm text-gray-600">
+                      <p key={item} className="text-sm text-[#A0A0A0]">
                         • {item}
                       </p>
                     ))}
@@ -103,7 +103,7 @@ const Services = () => {
                   className="w-full h-[400px] object-cover rounded-2xl shadow-xl"
                 />
 
-                <div className="bg-accent p-8 rounded-2xl">
+                <div className="bg-[#2A2E35] p-8 rounded-2xl border border-white/5">
                   <h3 className="text-2xl mb-6">
                     Estimated {activeService.title} Pricing
                   </h3>
@@ -115,11 +115,11 @@ const Services = () => {
                         <th className="pb-3 text-right">STARTING FROM</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y">
+                    <tbody className="divide-y divide-white/5">
                       {activeService.pricing.map((p) => (
                         <tr key={p.item}>
-                          <td className="py-4 font-semibold">{p.item}</td>
-                          <td className="py-4 text-right font-bold text-primary">
+                          <td className="py-4 font-semibold text-[#E0E0E0]">{p.item}</td>
+                          <td className="py-4 text-right font-bold text-secondary">
                             {p.price}
                           </td>
                         </tr>

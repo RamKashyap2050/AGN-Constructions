@@ -61,18 +61,21 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? "glass py-3 shadow-sm" : "bg-transparent py-5"
+        scrolled ? "glass py-3 shadow-sm bg-[#1F2228]/95" : "bg-transparent py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className="flex items-center space-x-2 group">
-          <div className="bg-primary p-2 rounded-lg group-hover:bg-secondary transition-colors duration-300">
+        <Link to="/" className="flex items-center space-x-3 group">
+          <div className="bg-secondary p-2 rounded-lg group-hover:bg-white/10 transition-colors duration-300">
             <Hammer className="text-white w-6 h-6" />
           </div>
-          <span className="text-xl font-heading font-extrabold tracking-tighter text-primary">
-            GN <span className="text-secondary">CONSTRUCTIONS</span>
-          </span>
+          <div className="flex flex-col -space-y-1">
+            <span className="text-xl font-heading font-extrabold tracking-tighter text-white">
+              GN <span className="text-secondary">CONSTRUCTIONS</span>
+            </span>
+            <span className="text-[10px] text-secondary font-bold tracking-[0.2em] uppercase">Premium Quality</span>
+          </div>
         </Link>
 
         {/* Desktop Menu */}
@@ -81,8 +84,8 @@ const Navbar = () => {
           {/* Home */}
           <Link
             to="/"
-            className={`font-semibold hover:text-secondary transition-colors duration-200 ${
-              location.pathname === "/" ? "text-secondary" : "text-primary"
+            className={`font-semibold text-sm uppercase tracking-widest hover:text-secondary transition-colors duration-200 ${
+              location.pathname === "/" ? "text-secondary" : "text-white/80"
             }`}
           >
             {t("navHome")}
@@ -91,8 +94,8 @@ const Navbar = () => {
           {/* Mission */}
           <Link
             to="/misson"
-            className={`font-semibold hover:text-secondary transition-colors duration-200 ${
-              location.pathname === "/misson" ? "text-secondary" : "text-primary"
+            className={`font-semibold text-sm uppercase tracking-widest hover:text-secondary transition-colors duration-200 ${
+              location.pathname === "/misson" ? "text-secondary" : "text-white/80"
             }`}
           >
             Mission
@@ -102,18 +105,18 @@ const Navbar = () => {
           {categories.map((cat) => (
             <div key={cat.key} className="relative group">
               <button
-                className={`flex items-center gap-1 font-semibold hover:text-secondary transition-colors duration-200 text-primary`}
+                className={`flex items-center gap-1 font-semibold hover:text-secondary transition-colors duration-200 text-white`}
               >
                 {cat.name}
-                <ChevronDown className="w-4 h-4 ml-0.5 transition-transform duration-200 group-hover:rotate-180" />
+                <ChevronDown className="w-4 h-4 ml-0.5 transition-transform duration-200 group-hover:rotate-180 text-secondary" />
               </button>
               {cat.services.length > 0 && (
-                <div className="absolute top-full left-0 mt-2 w-60 bg-white shadow-xl rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
+                <div className="absolute top-full left-0 mt-2 w-60 bg-[#2A2E35] shadow-2xl rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-white/5">
                   {cat.services.map((service) => (
                     <Link
                       key={service.id}
                       to={`/services#${service.id}`}
-                      className="block px-5 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-secondary transition-colors"
+                      className="block px-5 py-2.5 text-sm text-[#E0E0E0] hover:bg-white/5 hover:text-secondary transition-colors"
                     >
                       {service.title}
                     </Link>
@@ -126,30 +129,30 @@ const Navbar = () => {
           {/* Contact */}
           <Link
             to="/contact"
-            className={`font-semibold hover:text-secondary transition-colors duration-200 ${
-              location.pathname === "/contact" ? "text-secondary" : "text-primary"
+            className={`font-semibold text-sm uppercase tracking-widest hover:text-secondary transition-colors duration-200 ${
+              location.pathname === "/contact" ? "text-secondary" : "text-white/80"
             }`}
           >
             {t("navContact")}
           </Link>
 
           {/* Language Toggle */}
-          <div className="flex items-center gap-3 border-l pl-4">
+          <div className="flex items-center gap-3 border-l border-white/10 pl-4">
             <button
               onClick={() => changeLanguage("en")}
-              className="text-sm font-bold text-primary hover:text-secondary"
+              className={`text-sm font-bold hover:text-secondary ${i18n.language === 'en' ? 'text-secondary' : 'text-white'}`}
             >
               EN
             </button>
             <button
               onClick={() => changeLanguage("fr")}
-              className="text-sm font-bold text-primary hover:text-secondary"
+              className={`text-sm font-bold hover:text-secondary ${i18n.language === 'fr' ? 'text-secondary' : 'text-white'}`}
             >
               FR
             </button>
           </div>
 
-          <Link to="/contact" className="btn btn-primary px-5 py-2 text-sm">
+          <Link to="/contact" className="btn btn-primary px-6 py-2 text-xs uppercase tracking-widest">
             {t("getQuote")}
           </Link>
         </div>

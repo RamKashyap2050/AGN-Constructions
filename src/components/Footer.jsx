@@ -4,8 +4,8 @@ import { Phone, Mail, MapPin, Hammer } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-white pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-white/10 pb-12">
+    <footer className="bg-[#181A1F] text-white pt-16 pb-8 border-t border-white/5">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-white/5 pb-12">
         {/* Company Info */}
         <div className="space-y-4">
           <div className="flex items-center space-x-2">
@@ -39,7 +39,7 @@ const Footer = () => {
           <div className="space-y-3">
             <div className="flex items-start space-x-3 text-gray-400">
               <Phone size={20} className="text-secondary shrink-0" />
-              <span>(555) 123-4567</span>
+              <span>(514) 927-4131</span>
             </div>
             <div className="flex items-start space-x-3 text-gray-400">
               <Mail size={20} className="text-secondary shrink-0" />
@@ -47,7 +47,7 @@ const Footer = () => {
             </div>
             <div className="flex items-start space-x-3 text-gray-400">
               <MapPin size={20} className="text-secondary shrink-0" />
-              <span>123 Construction Way, Quebec, QC</span>
+              <span>5405 Rue des Jockeys, Montreal, QC</span>
             </div>
           </div>
         </div>
