@@ -1,0 +1,22 @@
+{
+  "name": "AGN Constructions",
+  "short_name": "AGN",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1F2228",
+  "theme_color": "#1F2228",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
