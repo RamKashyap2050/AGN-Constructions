@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #1F2228;
+  --secondary: #9A6A3F;
+  --accent: #2A2E35;
+  --text-dark: #E0E0E0;
+  --text-light: #A0A0A0;
+  --white: #F8F8F8;
+}
+
+@layer base {
+  body {
+    @apply font-body text-[var(--text-dark)] bg-[var(--primary)] overflow-x-hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading font-bold text-[var(--white)] tracking-tight;
+  }
+
+  p {
+    @apply leading-relaxed text-[var(--text-light)];
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-md font-semibold transition-all duration-300 transform active:scale-95 cursor-pointer;
+  }
+
+  .btn-primary {
+    @apply bg-secondary text-white hover:opacity-90 shadow-md hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-primary text-white border border-secondary/30 hover:bg-secondary/10 shadow-md hover:shadow-lg;
+  }
+
+  .btn-outline {
+    @apply border-2 border-secondary text-secondary hover:bg-secondary hover:text-white;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 px-6 md:px-12 max-w-7xl mx-auto;
+  }
+
+  .card {
+    @apply bg-accent p-8 rounded-xl shadow-sm border border-white/5 hover:border-secondary/30 transition-all duration-300;
+  }
+}
+
+.glass {
+  background: rgba(31, 34, 40, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, rgba(31, 34, 40, 0.95) 0%, rgba(31, 34, 40, 0.7) 100%);
+}
+
+.bronze-block {
+  background-color: #9A6A3F;
+}
