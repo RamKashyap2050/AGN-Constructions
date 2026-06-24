@@ -196,16 +196,6 @@ const Contact = () => {
 
               <div className="flex items-start gap-4">
                 <div className="bg-secondary p-3 rounded-lg text-white">
-                  <FileText size={22} />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-white">{t("licenseTitle")}</h4>
-                  <p className="text-[#A0A0A0]">{t("licenseNumber")}</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="bg-secondary p-3 rounded-lg text-white">
                   <Shield size={22} />
                 </div>
                 <div>

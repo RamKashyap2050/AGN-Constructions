@@ -55,7 +55,6 @@ const Mission = () => {
               {t("missionAuthor")}
             </p>
             <div className="text-sm text-gray-300 mt-2 space-y-1">
-              <p>{t("licenseTitle")}: {t("licenseNumber")}</p>
               <p>{t("rbqLicenseTitle")}: {t("licenseNumber")}</p>
             </div>
           </div>
