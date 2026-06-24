@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
-import { Send, Phone, Mail, MapPin, Star } from "lucide-react";
+import { Send, Phone, Mail, MapPin, Star, FileText, Shield } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import emailjs from "@emailjs/browser";
 
@@ -40,7 +40,7 @@ const Contact = () => {
 
   const gallery = [
     "https://st.hzcdn.com/simgs/pictures/basements/61e-rue-nicolas-savard-immobilier-et-construction-img~97919a5d04efdc0e_9-4915-1-84734f1.jpg",
-    "https://adaconstruction.ca/wp-content/uploads/2025/05/Bathroom-Remodeling.webp",
+    "https://kasselwoodfabricators.com/wp-content/uploads/2021/06/bathroom-design-company-in-Montreal-QC-Kasselwood.jpg",
     "https://media.minto.com/slideshows/1643/5_haddon_hall_2255_rue_lambert_closse_montreal_kitchen.jpg",
     "https://www.drywallproscleveland.com/wp-content/uploads/2021/02/Cleveland-Drywall-Pros-Drywall-Repair-2.jpg",
     "https://images.squarespace-cdn.com/content/v1/6373db11a264167b4fdd326a/48c7dbf5-b7a6-41a1-8c4a-7f5fb02b9993/IMG_5651.jpg",
@@ -167,7 +167,7 @@ const Contact = () => {
                   <Phone size={22} />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white">Phone</h4>
+                  <h4 className="font-semibold text-white">{t("contactPhoneHeader")}</h4>
                   <p className="text-[#A0A0A0]">(514) 927-4131</p>
                 </div>
               </div>
@@ -177,7 +177,7 @@ const Contact = () => {
                   <Mail size={22} />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white">Email</h4>
+                  <h4 className="font-semibold text-white">{t("contactEmailHeader")}</h4>
                   <p className="text-[#A0A0A0]">
                     info@gnconstructions.ca
                   </p>
@@ -189,8 +189,28 @@ const Contact = () => {
                   <MapPin size={22} />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white">Location</h4>
+                  <h4 className="font-semibold text-white">{t("contactLocationHeader")}</h4>
                   <p className="text-[#A0A0A0]">5405 Rue des Jockeys, Montreal, QC</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="bg-secondary p-3 rounded-lg text-white">
+                  <FileText size={22} />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-white">{t("licenseTitle")}</h4>
+                  <p className="text-[#A0A0A0]">{t("licenseNumber")}</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="bg-secondary p-3 rounded-lg text-white">
+                  <Shield size={22} />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-white">{t("rbqLicenseTitle")}</h4>
+                  <p className="text-[#A0A0A0]">{t("licenseNumber")}</p>
                 </div>
               </div>
             </div>

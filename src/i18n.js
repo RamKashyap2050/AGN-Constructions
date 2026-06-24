@@ -14,6 +14,13 @@ i18n.use(initReactI18next).init({
         missionCommitmentTitle: "Our Commitment",
         missionCommitmentText:
           "Construction is more than materials and machinery. It is discipline, accountability, and execution. Every project represents a promise — to build safely, deliver on schedule, and exceed expectations through craftsmanship that stands the test of time.",
+        missionAuthor: "- Jay Fernando, Chairman of GN Constructions",
+        licenseTitle: "License Number",
+        rbqLicenseTitle: "RBQ License Number",
+        licenseNumber: "5847-2333-01",
+        contactPhoneHeader: "Phone",
+        contactEmailHeader: "Email",
+        contactLocationHeader: "Location",
 
         missionValuesTitle: "Our Core Values",
 
@@ -108,7 +115,7 @@ i18n.use(initReactI18next).init({
             id: "bathroom",
             title: "Bathroom Renovations",
             image:
-              "https://adaconstruction.ca/wp-content/uploads/2025/05/Bathroom-Remodeling.webp",
+              "https://kasselwoodfabricators.com/wp-content/uploads/2021/06/bathroom-design-company-in-Montreal-QC-Kasselwood.jpg",
             content: [
               "A bathroom renovation is a true investment in comfort and property value.",
               "We offer complete bathroom remodels throughout Montreal.",
@@ -463,6 +470,13 @@ i18n.use(initReactI18next).init({
         missionCommitmentTitle: "Notre Engagement",
         missionCommitmentText:
           "La construction va bien au-delà des matériaux et de la machinerie. Elle repose sur la discipline, la responsabilité et l’exécution. Chaque projet représente une promesse : construire en toute sécurité, respecter les délais et dépasser les attentes grâce à un travail qui traverse le temps.",
+        missionAuthor: "- Jay Fernando, Président de GN Constructions",
+        licenseTitle: "Numéro de licence",
+        rbqLicenseTitle: "Numéro de licence RBQ",
+        licenseNumber: "5847-2333-01",
+        contactPhoneHeader: "Téléphone",
+        contactEmailHeader: "Courriel",
+        contactLocationHeader: "Adresse",
 
         missionValuesTitle: "Nos Valeurs Fondamentales",
 
@@ -561,7 +575,7 @@ i18n.use(initReactI18next).init({
             id: "bathroom",
             title: "Rénovation de Salle de Bain",
             image:
-              "https://adaconstruction.ca/wp-content/uploads/2025/05/Bathroom-Remodeling.webp",
+              "https://kasselwoodfabricators.com/wp-content/uploads/2021/06/bathroom-design-company-in-Montreal-QC-Kasselwood.jpg",
             content: [
               "Une rénovation de salle de bain est un investissement en confort et en valeur immobilière.",
               "Nous réalisons des rénovations complètes partout à Montréal.",

@@ -87,7 +87,7 @@ const Home = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
-                  src="https://thumbs.dreamstime.com/b/luxury-house-montreal-canada-luxury-house-montreal-canada-against-blue-sky-123981483.jpg"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvVogD6EFTgrHJ5_2_VIWGSfc9MAGCKSJbFRydmX5JkSKWhKa7cfUyTI4&s=10"
                   alt="Construction team"
                   className="rounded-sm shadow-2xl w-full h-full object-cover"
                 />
