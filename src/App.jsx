@@ -6,6 +6,7 @@ import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Mission from "./pages/Misson";
+import StickyContact from "./components/StickyContact";
 
 function App() {
   return (
@@ -13,13 +14,14 @@ function App() {
       <Navbar />
       <main className="flex-grow">
         <Routes>          
-          <Route path="/" element={<Mission />} />
-          <Route path="/misson" element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/misson" element={<Mission />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
       <Footer />
+      <StickyContact />
     </div>
   );
 }

@@ -413,11 +413,13 @@ i18n.use(initReactI18next).init({
         navExterior: "Exterior",
         navCommercial: "Commercial",
         navContact: "Contact",
-        getQuote: "Get a Quote",
-        servicesPageTitle: "Our Services",
-        servicesPageSubtitle:
-          "Detailed pricing and scope for our most popular renovation services.",
+
         contactTitle: "Contact Us",
+        tabEmail: "Email",
+        tabWhatsApp: "WhatsApp",
+        whatsappPrompt: "Need a fast response? Chat directly with our team on WhatsApp.",
+        whatsappBtn: "Open WhatsApp Chat",
+        whatsappDefaultMessage: "Hello AGN Constructions! I would like to get a quote for a renovation project.",
         contactSubtitle:
           "Ready to start? Get in touch with us for a free estimate and professional advice.",
         formQuoteTitle: "Get a Free Quote",
@@ -860,12 +862,14 @@ i18n.use(initReactI18next).init({
         navExterior: "Extérieur",
         navCommercial: "Commercial",
         navContact: "Contactes nouz",
-        getQuote: "Obtenir un devis",
-        servicesPageTitle: "Nos Services",
-        servicesPageSubtitle:
-          "Tarifs détaillés et portée de nos services de rénovation les plus populaires.",
+
 
         contactTitle: "Contactez-nous",
+        tabEmail: "Courriel",
+        tabWhatsApp: "WhatsApp",
+        whatsappPrompt: "Besoin d'une réponse rapide? Discutez directement avec notre équipe sur WhatsApp.",
+        whatsappBtn: "Ouvrir la discussion WhatsApp",
+        whatsappDefaultMessage: "Bonjour AGN Constructions! J'aimerais obtenir une estimation pour un projet de rénovation.",
         contactSubtitle:
           "Prêt à commencer? Contactez-nous pour une estimation gratuite et des conseils professionnels.",
         formQuoteTitle: "Obtenir une soumission gratuite",

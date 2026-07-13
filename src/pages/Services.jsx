@@ -7,7 +7,7 @@ import { AnimatePresence } from "framer-motion";
 const Services = () => {
   const { hash } = useLocation();
 
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const servicesData = t("services", { returnObjects: true });
 
   const currentServiceId = hash ? hash.substring(1) : (servicesData && Array.isArray(servicesData) && servicesData.length > 0 ? servicesData[0].id : null);

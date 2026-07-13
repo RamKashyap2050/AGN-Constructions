@@ -45,6 +45,7 @@ const Navbar = () => {
 
   // Close mobile menu on route change
   useEffect(() => {
+    // eslint-disable-next-line
     setIsOpen(false);
     setOpenCategory(null);
   }, [location.pathname, location.hash]);
