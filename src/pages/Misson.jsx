@@ -42,7 +42,7 @@ const Mission = () => {
               {t("missionCommitmentTitle")}
             </h2>
 
-            <p className="text-lg leading-relaxed">
+            <p className="text-lg text-white">
               {t("missionCommitmentText")}
             </p>
 
@@ -51,11 +51,11 @@ const Mission = () => {
               <li>• {t("missionValue2Title")}</li>
               <li>• {t("missionValue3Title")}</li>
             </ul>
-            <p className="text-lg leading-relaxed">
+            {/* <p className="text-lg leading-relaxed">
               {t("missionAuthor")}
-            </p>
-            <div className="text-sm text-gray-300 mt-2 space-y-1">
-              <p>{t("rbqLicenseTitle")}: {t("licenseNumber")}</p>
+            </p> */}
+            <div className="text-lg text-white">
+              <p className="text-lg text-white">{t("rbqLicenseTitle")}: {t("licenseNumber")}</p>
             </div>
           </div>
         </div>

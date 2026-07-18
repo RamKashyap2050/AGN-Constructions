@@ -39,20 +39,16 @@ const Footer = () => {
           <div className="space-y-3">
             <div className="flex items-start space-x-3 text-gray-400">
               <Phone size={20} className="text-secondary shrink-0" />
-              <span>(514) 927-4131</span>
+              <span>(438) 368-5154</span>
             </div>
             <div className="flex items-start space-x-3 text-gray-400">
               <Mail size={20} className="text-secondary shrink-0" />
               <span>info@gnconstructions.ca</span>
             </div>
-            <div className="flex items-start space-x-3 text-gray-400">
-              <MapPin size={20} className="text-secondary shrink-0" />
-              <span>5405 Rue des Jockeys, Montreal, QC</span>
-            </div>
           </div>
         </div>
       </div>
-      
+
       <div className="max-w-7xl mx-auto px-6 md:px-12 mt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
         <p>© {new Date().getFullYear()} GN Constructions. All rights reserved.</p>
         <p className="mt-2 md:mt-0">Built for excellence.</p>

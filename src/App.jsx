@@ -13,9 +13,9 @@ function App() {
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow">
-        <Routes>          
-          <Route path="/" element={<Home />} />
-          <Route path="/misson" element={<Mission />} />
+        <Routes>
+          <Route path="/" element={<Mission />} />
+          <Route path="/misson" element={<Home />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
