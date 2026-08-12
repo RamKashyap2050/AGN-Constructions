@@ -184,15 +184,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="bg-secondary p-3 rounded-lg text-white">
-                  <MapPin size={22} />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-white">{t("contactLocationHeader")}</h4>
-                  <p className="text-[#A0A0A0]">5405 Rue des Jockeys, Montreal, QC</p>
-                </div>
-              </div>
+
 
               <div className="flex items-start gap-4">
                 <div className="bg-secondary p-3 rounded-lg text-white">

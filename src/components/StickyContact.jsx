@@ -119,18 +119,16 @@ const StickyContact = () => {
               <button
                 type="button"
                 onClick={() => setActiveTab("email")}
-                className={`flex-1 text-center py-2 text-xs font-bold uppercase tracking-wider transition-colors z-10 ${
-                  activeTab === "email" ? "text-white" : "text-white/50 hover:text-white/80"
-                }`}
+                className={`flex-1 text-center py-2 text-xs font-bold uppercase tracking-wider transition-colors z-10 ${activeTab === "email" ? "text-white" : "text-white/50 hover:text-white/80"
+                  }`}
               >
                 {t("tabEmail")}
               </button>
               <button
                 type="button"
                 onClick={() => setActiveTab("whatsapp")}
-                className={`flex-1 text-center py-2 text-xs font-bold uppercase tracking-wider transition-colors z-10 ${
-                  activeTab === "whatsapp" ? "text-white" : "text-white/50 hover:text-white/80"
-                }`}
+                className={`flex-1 text-center py-2 text-xs font-bold uppercase tracking-wider transition-colors z-10 ${activeTab === "whatsapp" ? "text-white" : "text-white/50 hover:text-white/80"
+                  }`}
               >
                 {t("tabWhatsApp")}
               </button>
@@ -232,7 +230,7 @@ const StickyContact = () => {
                     {t("whatsappPrompt")}
                   </p>
                   <a
-                    href={`https://wa.me/15149274131?text=${encodeURIComponent(
+                    href={`https://wa.me/14383685154?text=${encodeURIComponent(
                       t("whatsappDefaultMessage")
                     )}`}
                     target="_blank"
