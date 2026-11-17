@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Hammer } from 'lucide-react';
+import { Phone, Mail, MapPin, Hammer, Shield } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -44,6 +44,10 @@ const Footer = () => {
             <div className="flex items-start space-x-3 text-gray-400">
               <Mail size={20} className="text-secondary shrink-0" />
               <span>info@gnconstructions.ca</span>
+            </div>
+            <div className="flex items-start space-x-3 text-gray-400">
+              <Shield size={20} className="text-secondary shrink-0" />
+              <span>5847-2333-01 </span>
             </div>
           </div>
         </div>
